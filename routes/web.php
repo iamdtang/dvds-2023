@@ -14,5 +14,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    // SELECT * FROM dvd_titles
+    $dvds = DB::table('dvd_titles')->get();
+
+    return view('index', [
+        'dvds' => $dvds,
+    ]);
 });
+
+
