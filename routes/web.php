@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\DvdController;
+use App\Http\Controllers\ContactController;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,5 +16,5 @@ use App\Http\Controllers\DvdController;
 */
 
 Route::get('/', [DvdController::class, 'index']);
-
-
+Route::get('/contact', [ContactController::class, 'showForm']);
+Route::post('/contact', [ContactController::class, 'processForm']);
