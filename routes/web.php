@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DvdController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,13 +14,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // SELECT * FROM dvd_titles
-    $dvds = DB::table('dvd_titles')->get();
-
-    return view('index', [
-        'dvds' => $dvds,
-    ]);
-});
+Route::get('/', [DvdController::class, 'index']);
 
 
